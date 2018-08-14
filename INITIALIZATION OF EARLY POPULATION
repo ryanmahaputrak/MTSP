@@ -1,0 +1,39 @@
+#MTSP
+#INITIALIZATION-OF-EARLY-POPULATION
+#INISIALISASI POPULASI AWAL
+
+public int [][] Inisialisasi(){
+int[][] finalKrom = new int[populasi][stringLength];
+int[] segmenRute = new int[panjangSegmenRute], segmenTruk
+= new int[panjangSegmenRute], tmpKrom = new int[stringLength];
+int incre = 0;
+for (int w = 0; w < finalKrom.length; w++) {
+segmenRute = coreInitiate(panjangSegmenRute);
+segmenTruk = coreInitiateTruk(panjangSegmenTruk);
+for (int k = 0; k < segmenRute.length; k++) {
+tmpKrom[k] = segmenRute[k];
+}
+incre = 0;
+for (int k = panjangSegmenRute; k < segmenTruk.length
++ panjangSegmenRute; k++) {
+tmpKrom[k] = segmenTruk[incre];
+incre++;
+}
+for (int k = 0; k < finalKrom[0].length; k++) {
+finalKrom[w][k] = tmpKrom[k];
+}
+}
+return finalKrom;
+}
+private int[] coreInitiateTruk(int panjangSegmenTruk){
+int acak = 0, total = 0;
+int[]tmpTruk = new int[panjangSegmenTruk];
+while(total != panjangSegmenRute){
+total = 0;
+for(int i = 0; i < panjangSegmenTruk; i++){
+tmpTruk[i] = getRandom(1, panjangSegmenRute);
+total = total + tmpTruk[i];
+}
+}
+return tmpTruk;
+}
